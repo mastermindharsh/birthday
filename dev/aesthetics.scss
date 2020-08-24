@@ -1,0 +1,226 @@
+//Variables
+$bg: "./makeup/foundation.jpg";
+$font: "./makeup/eyeliner.ttf";
+$text-color: #fff;
+$accent-color: #00cccc;
+
+@font-face {
+  font-family: "Satisfy";
+  src: url($font) format("truetype"); /* Safari, Android, iOS */
+}
+
+//Animations
+@keyframes colorize {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.colorize {
+  color: #92ffff;
+  animation: colorize 2s infinite forwards linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+.spin {
+  animation: spin 3s infinite forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heart-beat {
+  0% {
+    color: #b82d50;
+    transform: scale(1);
+  }
+  100% {
+    color: palevioletred;
+    transform: scale(1.5);
+  }
+}
+.heart-beat {
+  color: palevioletred;
+  animation: heart-beat 1s infinite alternate cubic-bezier(1, 0.04, 0.51, 1.45);
+}
+
+@keyframes dance {
+  0% {
+    transform: rotate(-15deg) skewY(20deg);
+  }
+  100% {
+    transform: rotate(15deg) skewY(-20deg);
+  }
+}
+.dance {
+  background: rgba(255, 255, 255, 0.2);
+  animation: dance 2s ease-in-out infinite alternate;
+}
+
+@keyframes light {
+  0% {
+    color: #ebbb1f;
+  }
+  100% {
+    text-shadow: 0 0 10px #ebbb1f;
+  }
+}
+
+.light {
+  animation: light 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
+}
+
+@keyframes hula {
+  0% {
+    transform: translate(-20px, 0);
+  }
+  12% {
+    transform: translate(-15px, -15px);
+  }
+  25% {
+    transform: translate(0, -20px);
+  }
+  37% {
+    transform: translate(15px, -15px);
+  }
+  50% {
+    transform: translate(20px, 0);
+  }
+  62% {
+    transform: translate(15px, 15px);
+  }
+  75% {
+    transform: translate(0, 20px);
+  }
+  82% {
+    transform: translate(-15px, 15px);
+  }
+  100% {
+    transform: translate(-20px, 0);
+  }
+}
+.hula {
+  color: white;
+  border-radius: 15px;
+  box-shadow: white 0 0 20px;
+  animation: hula 0.8s linear infinite forwards;
+}
+
+@keyframes flow {
+  0% {
+    transform: scale(1) rotate(20deg);
+  }
+  100% {
+    transform: scale(1.75) rotate(-20deg);
+  }
+}
+.flow {
+  animation: flow 2s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.shake {
+  font-size: 3rem !important;
+  animation: shake 0.25s linear infinite alternate;
+}
+
+@keyframes spotlight {
+  0% {
+    transform: rotateX(-50deg) translate(-20px, 25px);
+  }
+  25% {
+    transform: rotateY(50deg) translate(25px, -30px);
+  }
+  50% {
+    transform: rotateX(50deg) translate(20px, 25px);
+  }
+  75% {
+    transform: rotateY(-50deg) translate(-25px, 30px);
+  }
+  100% {
+    transform: rotateX(-50deg) translate(-20px, 25px);
+  }
+}
+.spotlight {
+  animation: spotlight 5s linear infinite forwards;
+}
+
+//SASS
+* {
+  box-sizing: border-box;
+  font-family: "Satisfy";
+  color: $text-color;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0 15px;
+  .bg {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background: url($bg) no-repeat center center;
+    background-size: cover;
+
+    transform: scale(1.1);
+  }
+  .card {
+    border: 3px solid $text-color;
+    margin: 10vh auto;
+    box-shadow: inset 0 0 25px 4px $text-color;
+    display: flex;
+    max-width: 1000px;
+  }
+}
+
+.panel {
+  height: 80vh;
+  border-width: 0 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex: 0;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.panel.show {
+  flex: 1;
+}
+
+.hero {
+  transform: skew(10deg);
+  .text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 6rem;
+    padding: 15px 25px;
+  }
+}

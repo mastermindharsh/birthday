@@ -47,7 +47,7 @@
 
 <script type="text/javascript">
 
-  var count = new Date("September 4,2020 00:00:00").getTime();
+  var count = new Date("August 24,2020 23:05:00").getTime();
   var x = setInterval(function() {
     var now = new Date().getTime();
     var d = count - now;
@@ -60,12 +60,18 @@
     document.getElementById("days").innerHTML = days;
     document.getElementById("hours").innerHTML = hours;
     document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("seconds").innerHTML = seconds; 
 
     if(d <= 0){
       clearInterval(x);
+
+     window.location = " /index2.html";
+
     }
+
+    
   },1000);
+
 </script>
 <script src="snow.js"></script>
 <script
