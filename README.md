@@ -1,6 +1,4 @@
 # 🎈 Birthday card for my friend 🎈
 
-Here is the result: https://zinevych25.surge.sh
+Here is the result: https://mastermindharsh.github.io/birthday/
 
-I used [CSS3 balloons](https://codepen.io/wearebold/full/tDJLr) and sligtly updated them to suit my needs. I used flex-boxes to position elements on the page.
-There is no JavaScript on the project.
