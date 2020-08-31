@@ -5,8 +5,8 @@
   
   .row {
     position: absolute;
-    top: 190%;
-    left: 50%;
+    top: 90%;
+    left: 55%;
     transform: translate(-50%, -50%);
   }
 
@@ -220,3 +220,4 @@ height: 160px;
     transform: translateY(-700px) rotate(600deg);
 }
 }
+

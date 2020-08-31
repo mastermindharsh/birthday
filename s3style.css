@@ -1,0 +1,9 @@
+.poem{
+    align-content: center;
+    font-size: 1.2em;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 5%;
+    margin-left: -26px; 
+}
